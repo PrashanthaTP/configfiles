@@ -1,4 +1,3 @@
-
 " source vim file
 nmap <leader>sv :source ~/.vimrc<CR>
 nmap <leader>so :e ~/.vimrc<CR>

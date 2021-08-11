@@ -10,14 +10,14 @@ Plug 'ryanoasis/vim-devicons'
 " Track the engine.
 Plug 'SirVer/ultisnips'
 " Snippets are separated from the engine. Add this if you want them:
-Plug 'honza/vim-snippets'
+ Plug 'honza/vim-snippets'
 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf.vim'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'w0rp/ale'
-Plug 'sheerun/vim-polyglot'
+"Plug 'w0rp/ale'
+"Plug 'sheerun/vim-polyglot'
 
 Plug 'itchyny/lightline.vim'
 
@@ -25,7 +25,8 @@ Plug 'preservim/nerdcommenter'
 
 Plug 'tpope/vim-surround'
 
-Plug 'mhinz/vim-startify'
+"dont know why it makes switching to normal mode slow
+"Plug 'mhinz/vim-startify'
 call plug#end()
 
 
@@ -119,17 +120,6 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
 "autocmd VimEnter * unlet g:NERDTreeIndicatorMapCustom
 " }}}
 
-" fzf ----- {{{
-" put search prompt at the top
-" let $FZF_DEFAULT_OPTS ='--reverse'
-" nnoremap <C-p> :Files<CR>
-" let g:fzf_action = {
-  " \ 'ctrl-t': 'tab split',
-  " \ 'ctrl-s': 'split',
-  " \ 'ctrl-v': 'vsplit'
-  " \}
-" }}}
-
 " Nerd Commenter ----- {{{
 " " Use compact syntax for prettified multi-line comments
 let g:NERDCompactSexyComs = 1
@@ -147,17 +137,6 @@ vmap <C-_> <plug>NERDCommenterToggle
 nmap <C-_> <plug>NERDCommenterToggle
 " }}}
 
-" ALE ----- {{{
-" ALE (Asynchronous Lint Engine)
-let g:ale_fixers = {
- \ 'javascript': ['eslint']
- \ }
-let g:ale_sign_error = '❌'
-let g:ale_sign_warning = '⚠️'
-let g:ale_fix_on_save = 1
-
-" }}}
-
 " lightline ----- {{{
 " Lightline
 "let g:lightline = {
@@ -168,27 +147,15 @@ let g:ale_fix_on_save = 1
   \     }
   \ }
 let g:lightline = {
-      \ 'colorscheme': 'powerlineish',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],['readonly', 'filename', 'modified']],
-      \   'right' : [['cocstatus', 'currentfunction'],['lineinfo'], ['percent'], ['fileformat', 'fileencoding']]
-      \ },
-      \ 'component_function': {
-      \   'cocstatus': 'coc#status',
-      \   'currentfunction': 'CocCurrentFunction'
-      \ }
-      \ }
+	  \ 'colorscheme': 'powerlineish',
+	  \ 'active': {
+	  \   'left': [ [ 'mode', 'paste' ],['readonly', 'filename', 'modified']],
+	  \   'right' : [['cocstatus', 'currentfunction'],['lineinfo'], ['percent'], ['fileformat', 'fileencoding']]
+	  \ },
+	  \ 'component_function': {
+	  \   'cocstatus': 'coc#status',
+	  \   'currentfunction': 'CocCurrentFunction'
+	  \ }
+	  \ }
 
-" }}}
-"
-" vim-startify ----- {{{
-"let g:startify_custom_header += [
-    ""\'████████╗██████╗ ██████╗ ',
-    ""\'╚══██╔══╝██╔══██╗██╔══██╗',
-    ""\'   ██║   ██████╔╝██████╔╝',
-   "" \'   ██║   ██╔═══╝ ██╔═══╝ ',
-    """"\'   ██║   ██║     ██║     ',
-    ""\'   ╚═╝   ╚═╝     ╚═╝     ',
-    ""\]
-  ""\ startify#pad(split(system('figlet -w 100 TPP'), \n))
 " }}}

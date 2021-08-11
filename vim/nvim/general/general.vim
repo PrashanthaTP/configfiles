@@ -3,10 +3,11 @@ set mouse=a
 " Statusline --- {{{
 set statusline=2
 set laststatus=2
+set belloff=all
 " }}}
 " CLIPBOARD ----- {{{
 "vim clipboard and system clipboard same now
-set clipboard^=unnamed 
+set clipboard=unnamedplus
 " }}}
 
 
