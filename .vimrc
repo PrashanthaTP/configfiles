@@ -1,5 +1,4 @@
 set virtualedit+=onemore
-nnoremap <leader>sv :source ~/.vimrc<CR>
 " Cursor in terminal
 " https//vim.fandom.com/wiki/Configuring_the_cursor
 " 1 or 0 -> blinking block
