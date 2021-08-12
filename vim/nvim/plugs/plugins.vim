@@ -1,3 +1,4 @@
+" plugins --- {{{
 call plug#begin("~/.vim/plugged") 
 
 Plug 'morhetz/gruvbox'
@@ -28,12 +29,12 @@ Plug 'tpope/vim-surround'
 "dont know why it makes switching to normal mode slow
 "Plug 'mhinz/vim-startify'
 call plug#end()
-
-
+" }}}
 
 " UltiSnips ----- {{{
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<F5>"
+
 "let g:UltiSnipsJumpForwardTrigger="<c-b>"
 "let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " }}}

@@ -17,17 +17,18 @@ let &t_SI .= "\<Esc>[6 q"
 endif
 " noremap <expr> k ((line('.')==1)?'':'k')
 " noremap <expr> j ((line('.')==line('$'))?'':'j')
-autocmd VimEnter * silent !echo -ne "\e[2 q"
-autocmd VimLeave * silent !echo -ne "\e[6 q"
+autocmd VimEnter * silent! echo -ne "\e[2 q"
+autocmd VimLeave * silent! echo -ne "\e[6 q"
 
 source ~/vim/nvim/init.vim
-" WSL yank support
-" let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
-" if executable(s:clip)
-    " augroup WSLYank
-        " autocmd!
-        " autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
-    " augroup END
-" endif
-" set timeoutlen=5
-" set ttimeoutlen=50
+"⚠ WARNING : SOMETIMES AFFECTS VISUAL MODE
+" " WSL yank support
+ " let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
+ " if executable(s:clip)
+ " augroup WSLYank
+   " autocmd!
+   " autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
+ " augroup END
+ " endif
+" " set timeoutlen=5
+" " set ttimeoutlen=50

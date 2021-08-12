@@ -7,9 +7,8 @@ set belloff=all
 " }}}
 " CLIPBOARD ----- {{{
 "vim clipboard and system clipboard same now
-set clipboard=unnamedplus
+set clipboard^=unnamed
 " }}}
-
 
 " EDITOR ----- {{{
 syntax on
