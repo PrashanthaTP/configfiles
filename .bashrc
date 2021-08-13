@@ -115,7 +115,8 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-####################################### prompt
+###########################################
+# prompt
 source ~/.config/bash-prompts/gruvbox.sh
 ############################################
 export NVM_DIR="$HOME/.nvm"
@@ -123,4 +124,27 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 ###########################################
 alias configfiles="/usr/bin/git --git-dir=$HOME/.configfiles.git/ --work-tree=$HOME"
+###########################################
+# WSL
+###########################################
+# WSL 2 specific settings.
+if grep -q "microsoft" /proc/version &>/dev/null; then
+    # Requires: https://sourceforge.net/projects/vcxsrv/ (or alternative)
+    export DISPLAY="$(/sbin/ip route | awk '/default/ { print $3 }'):0"
 
+    # Allows your gpg passphrase prompt to spawn (useful for signing commits).
+    export GPG_TTY=$(tty)
+fi
+
+# WSL 1 specific settings.
+if grep -qE "(Microsoft|WSL)" /proc/version &>/dev/null; then
+    if [ "$(umask)" = "0000" ]; then
+        umask 0022
+    fi
+
+    # Requires: https://sourceforge.net/projects/vcxsrv/ (or alternative)
+	export DISPLAY_NUMBER="0.0"
+	export DISPLAY=$(grep -m 1 nameserver /etc/resolv.conf | awk '{print $2}'):$DISPLAY_NUMBER
+	#export LIBGL_ALWAYS_INDIRECT=1
+fi
+##########################################
