@@ -148,7 +148,7 @@ nmap <C-_> <plug>NERDCommenterToggle
   \     }
   \ }
 let g:lightline = {
-	  \ 'colorscheme': 'powerlineish',
+	  \ 'colorscheme': 'gruvbox',
 	  \ 'active': {
 	  \   'left': [ [ 'mode', 'paste' ],['readonly', 'filename', 'modified']],
 	  \   'right' : [['cocstatus', 'currentfunction'],['lineinfo'], ['percent'], ['fileformat', 'fileencoding']]
