@@ -1,0 +1,72 @@
+########### IMPORTANT ######################
+####https://wiki.archlinux.org/title/readline
+$include /etc/inputrc
+#############################################
+#Or you can set it such that a single tab will perform both steps: partially complete the word and show all possible completions if it is still ambiguous:
+
+set show-all-if-ambiguous on
+# Color files by types
+# Note that this may cause completion text blink in some terminals (e.g. xterm).
+set colored-stats On
+# Append char to indicate type
+set visible-stats On
+# Mark symlinked directories
+set mark-symlinked-directories On
+# Color the common prefix
+set colored-completion-prefix On
+# Color the common prefix in menu-complete
+set menu-complete-display-prefix On#
+################################################3
+set completion-ignore-case on
+set bell-style none
+# # FOR MORE INFORMATION CHECK:
+# # https://wiki.archlinux.org/index.php/Readline
+#
+# export EDITOR=/usr/bin/vim
+# # TURN ON VIM (E.G. FOR READLINE)
+# set editing-mode vi
+#
+# # SHOW THE VIM MODE IN THE PROMPT (COMMAND OR INSERT)
+# set show-mode-in-prompt on
+#
+# # SET THE MODE STRING AND CURSOR TO INDICATE THE VIM MODE
+# #   FOR THE NUMBER AFTER `\e[`:
+# #     0: blinking block
+# #     1: blinking block (default)
+# #     2: steady block
+# #     3: blinking underline
+# #     4: steady underline
+# #     5: blinking bar (xterm)
+# #     6: steady bar (xterm)
+# set vi-ins-mode-string "(ins) "
+# set vi-cmd-mode-string "(cmd) "
+# # vi settings
+# $if mode=vi
+    # set keymap vi-insert "jk"
+	# # remap escape
+# $endif
+##########################################
+#https://unix.stackexchange.com/a/484833
+set editing-mode vi
+set show-mode-in-prompt on
+$if term=linux
+	set vi-ins-mode-string \1\e[?0c\2
+	set vi-cmd-mode-string \1\e[?8c\2
+$else
+	set vi-ins-mode-string \1\e[6 q\2
+	set vi-cmd-mode-string \1\e[2 q\2
+$endif
+
+ # set keymap emacs
+ # "\ee": vi-editing-mode
+ # "jk": "\eejk"
+ # "kj": "\eejk"
+
+ set keymap vi-insert
+ # "\ee": emacs-editing-mode
+ "jk": vi-movement-mode
+ # "kj": vi-movement-mode
+
+ # set keymap vi-command
+ # "\ee": emacs-editing-mode
+ # ##################################

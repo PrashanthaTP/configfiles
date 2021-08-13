@@ -148,3 +148,27 @@ if grep -qE "(Microsoft|WSL)" /proc/version &>/dev/null; then
 	#export LIBGL_ALWAYS_INDIRECT=1
 fi
 ##########################################
+##################### VI #################
+#################### VIM ####################
+# FOR MORE INFORMATION CHECK:
+# https://wiki.archlinux.org/index.php/Readline
+
+# export EDITOR=/usr/bin/vim
+# # TURN ON VIM (E.G. FOR READLINE)
+# set editing-mode vi
+#
+# # SHOW THE VIM MODE IN THE PROMPT (COMMAND OR INSERT)
+# set show-mode-in-prompt on
+#
+# # SET THE MODE STRING AND CURSOR TO INDICATE THE VIM MODE
+# #   FOR THE NUMBER AFTER `\e[`:
+# #     0: blinking block
+# #     1: blinking block (default)
+# #     2: steady block
+# #     3: blinking underline
+# #     4: steady underline
+# #     5: blinking bar (xterm)
+# #     6: steady bar (xterm)
+# set vi-ins-mode-string "(ins)"
+# set vi-cmd-mode-string "(cmd)"
+##########################################
