@@ -123,6 +123,8 @@ function __prompt {
     PS1+="\001${BLACK2_BG}\002\001${GRAY}\002 \w \001${RESET}\002"                # ~
     PS1+="\$(prompt_git)"                                                          # <git branch>
     PS1+="\$(status_prefix)"                                                       # $
+	PS1+="\n\001${GRAY}└─${RESET}\002${GRAY} \$${RESET}${GRAY} ▶${RESET} "
+
   }
 
   PROMPT_COMMAND=init_prompt
