@@ -34,7 +34,7 @@ endif
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-let g:coc_snippet_next = '<tab>' "tab to go to first suggestion
+"let g:coc_snippet_next = '<tab>' "tab to go to first suggestion
 
 
 " GoTo code navigation.

@@ -11,7 +11,7 @@ Plug 'ryanoasis/vim-devicons'
 " Track the engine.
 Plug 'SirVer/ultisnips'
 " Snippets are separated from the engine. Add this if you want them:
- Plug 'honza/vim-snippets'
+Plug 'honza/vim-snippets'
 
 " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Plug 'junegunn/fzf.vim'
@@ -25,20 +25,18 @@ Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdcommenter'
 
 Plug 'tpope/vim-surround'
-
 "dont know why it makes switching to normal mode slow
 "Plug 'mhinz/vim-startify'
 call plug#end()
 " }}}
-
 " UltiSnips ----- {{{
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+" install coc-snippets
 let g:UltiSnipsExpandTrigger="<F5>"
-
 "let g:UltiSnipsJumpForwardTrigger="<c-b>"
 "let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+"let g:UltiSnipsSnippetsDir = $HOME.'/.vim/UltiSnips'
 " }}}
-
 " gruvbox ----- {{{
 if (has("termguicolors"))
  set termguicolors
@@ -160,3 +158,4 @@ let g:lightline = {
 	  \ }
 
 " }}}
+" 

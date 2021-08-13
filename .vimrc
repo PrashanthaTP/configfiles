@@ -1,4 +1,5 @@
 set virtualedit+=onemore
+filetype on
 " Cursor in terminal
 " https//vim.fandom.com/wiki/Configuring_the_cursor
 " 1 or 0 -> blinking block
@@ -8,7 +9,6 @@ set virtualedit+=onemore
 " Recent versions of xterm (282 or above) also support
 " 5 -> blinking vertical bar
 " 6 -> solid vertical bar
-   
 if &term =~ '^xterm'
 " normal mode
 let &t_EI .= "\<Esc>[2 q"
@@ -19,7 +19,6 @@ endif
 " noremap <expr> j ((line('.')==line('$'))?'':'j')
 autocmd VimEnter * silent! echo -ne "\e[2 q"
 autocmd VimLeave * silent! echo -ne "\e[6 q"
-
 source ~/vim/nvim/init.vim
 "⚠ WARNING : SOMETIMES AFFECTS VISUAL MODE
 " " WSL yank support
@@ -32,3 +31,4 @@ source ~/vim/nvim/init.vim
  " endif
 " " set timeoutlen=5
 " " set ttimeoutlen=50
+"
