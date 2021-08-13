@@ -20,6 +20,10 @@ endif
 autocmd VimEnter * silent! echo -ne "\e[2 q"
 autocmd VimLeave * silent! echo -ne "\e[6 q"
 source ~/vim/nvim/init.vim
+hi Comment gui=italic cterm=italic
+hi htmlArg gui=italic cterm=italic
+hi Keyword gui=italic cterm=italic
+autocmd ColorScheme * highlight jsClassKeyword cterm=italic
 "⚠ WARNING : SOMETIMES AFFECTS VISUAL MODE
 " " WSL yank support
  " let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
