@@ -5,9 +5,10 @@ set statusline=2
 set laststatus=2
 set belloff=all
 " }}}
+
 " CLIPBOARD ----- {{{
 "vim clipboard and system clipboard same now
-set clipboard^=unnamed
+set clipboard=unnamedplus
 " }}}
 
 " EDITOR ----- {{{
@@ -16,6 +17,7 @@ set ignorecase
 set smartcase
 " use 4 spaces for tabs
 set tabstop=4
+set expandtab
 set softtabstop=4
 set shiftwidth=4
 set number relativenumber
