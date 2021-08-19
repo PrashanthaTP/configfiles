@@ -104,6 +104,10 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+if [ -f ~/.bash_functions ]; then
+    . ~/.bash_functions
+fi
+
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -172,3 +176,8 @@ fi
 # set vi-ins-mode-string "(ins)"
 # set vi-cmd-mode-string "(cmd)"
 ##########################################
+########### ls command ###################
+LS_COLORS=$LS_COLORS:'tw=01;35:ow=01;35:' ; export LS_COLORS
+##########################################
+############# pipenv #####################
+WORKON_HOME=~/Desktop/venvs
