@@ -7,7 +7,7 @@ let g:lightline = {
       \ 'colorscheme': 'gruvbox_material',
       \ 'active': {
 		  \   'left': [ [ 'mode', 'paste' ],['readonly', 'filename', 'modified','fugitive']],
-      \   'right' : [['cocstatus', 'currentfunction'],['lineinfo'], ['percent'],['filetype','fileencoding']]
+      \   'right' : [['cocstatus', 'currentfunction'],['lineinfo', 'percent','filetype','fileencoding']]
       \ },
       \ 'component_function': {
       \   'cocstatus': 'coc#status',
