@@ -13,6 +13,7 @@ set clipboard=unnamedplus
 
 " EDITOR ----- {{{
 syntax on
+filetype plugin indent on
 set ignorecase
 set smartcase
 " use 4 spaces for tabs
@@ -20,11 +21,12 @@ set tabstop=4
 set expandtab
 set softtabstop=4
 set shiftwidth=4
+set scrolloff=8
 set number relativenumber
 " }}}
-"
 
 " SEARCHING ----- {{{
+set incsearch
 set nohlsearch
 " clear last used search pattern:http://vimdoc.sourceforge.net/htmldoc/pattern.html#last-pattern
 let @/="" 
@@ -37,12 +39,8 @@ set foldmethod=marker
 " }}}
 
 " BUFFERS ----- {{{
-" remember foldings
-augroup remember_folds
-  autocmd!
-  autocmd BufWinLeave * mkview
-  autocmd BufWinEnter * silent! loadview
-augroup END
+" remember foldings : moved to general/augroups.vim
+
 " }}}
 
 " SPLITS ----- {{{
@@ -91,3 +89,5 @@ set updatetime=300
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 " }}}
+
+
