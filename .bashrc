@@ -121,7 +121,7 @@ if ! shopt -oq posix; then
 fi
 ###########################################
 # prompt
-source ~/.config/bash-prompts/gruvbox.sh
+source ~/.config/bash-prompts/custom-gruvbox.sh
 ############################################
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
