@@ -121,7 +121,7 @@ if ! shopt -oq posix; then
 fi
 ###########################################
 # prompt
-source ~/.config/bash-prompts/custom-gruvbox.sh
+source ~/.config/bash-prompts/minimal.sh
 ############################################
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -180,4 +180,4 @@ fi
 LS_COLORS=$LS_COLORS:'tw=01;35:ow=01;35:' ; export LS_COLORS
 ##########################################
 ############# pipenv #####################
-WORKON_HOME=~/Desktop/venvs
+export WORKON_HOME=~/Desktop/venvs

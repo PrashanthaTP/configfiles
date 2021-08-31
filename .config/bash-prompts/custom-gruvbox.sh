@@ -21,6 +21,8 @@ function __prompt {
     RESET=$(tput sgr0)
     if [[ $(tput colors) -ge 256 ]] 2>/dev/null; then
       BLACK=$(tput setaf 235)
+      BLACK0=$(tput setaf 0)
+      BLACK0_BG=$(tput setab 0)
       BLACK1=$(tput setaf 237)
       BLACK1_BG=$(tput setab 237)
       BLACK2=$(tput setaf 239)
@@ -128,6 +130,15 @@ function __prompt {
     PS1+="\001${YELLOW_BG}\002\001${BLACK1}\002\001${BLACK}\002\w \001${RESET}\002"                # ~
     PS1+="\$(prompt_git)"                                                          # <git branch>
     PS1+="\$(status_prefix)"                                                       # $
+
+    if [[ ${#VIRTUAL_ENV} -gt 0 ]]
+    then
+        PS1+="\001${YELLOW_BG}\002\001${BLACK1}\002"
+        PS1+=$' \uE235 '
+        PS1+="$(basename ${VIRTUAL_ENV}) "
+        PS1+="\001${YELLOW}\002\001${BLACK0_BG}\002\001${RESET}\002"
+    fi
+
 	PS1+="\n\001${GRAY}\002└─$\001${GRAY}\002\001${GRAY}\002 ▶\001${RESET}\002 "
 #\001${BLACK2_BG}\002
   }
